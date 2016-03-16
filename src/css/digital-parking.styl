@@ -1,0 +1,73 @@
+$gutter = 16px
+
+//RESETS
+*
+	-webkit-tap-highlight-color: rgba(0,0,0,0)
+
+body
+	-webkit-touch-callout: none
+	-webkit-text-size-adjust: none
+	-webkit-user-select: none
+
+//HELPER CLASSES
+.right
+	float: right
+
+.left
+	float: left
+
+.block
+	display: block
+
+.hidden
+	display: none
+
+//TEXT HELPERS
+.text-center
+	text-align: center
+
+.text-right
+	text-align: right
+
+.text-left
+	text-align: left
+
+//MARGIN AND PADDING
+.m-top
+	margin-top: $gutter
+
+.m-bottom
+	margin-bottom: $gutter
+
+.m-h
+	margin-top: $gutter
+	margin-bottom: $gutter
+
+//MAIN BUTTON CLASSES
+.action-btn
+	width: 80%
+	display: block
+	margin: auto auto 16px auto
+	border-radius: 50%
+	box-shadow: 0 4px 16px rgba(0,0,0,.3)
+
+	&:active
+		box-shadow: none
+		top: 4px
+
+[data-action]
+	position: relative
+
+	& > .status-icon
+		position: absolute
+		top: 0
+		right: 10px
+		font-size: 24px
+		color: #fff
+		width: (@font-size * 1.5)
+		height: @width
+		line-height: @width
+		padding: 4px
+		text-align: center
+		border-radius: 50%
+

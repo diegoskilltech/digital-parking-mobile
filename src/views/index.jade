@@ -1,0 +1,92 @@
+doctype html
+html
+	head
+		meta(charset="utf-8")
+		meta(name="format-detection", content="telephone=no")
+		meta(name="msapplication-tap-highlight", content="no") 
+		meta(name="viewport", content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui")
+		meta(name='mobile-web-app-capable', content='yes')
+
+		link(rel="stylesheet", type="text/css", href="css/framework7.material.min.css")
+		link(rel="stylesheet", type="text/css", href="css/framework7.material.colors.min.css")
+		link(rel="stylesheet", type="text/css", href="css/ionicons.min.css")
+		link(rel="stylesheet", type="text/css", href="css/digital-parking.css")
+		title Botón de Alerta
+
+	body.theme-blue
+
+		//Status bar overlay for full screen mode
+		.statusbar-overlay
+
+		//Panels overlay
+		.panel-overlay
+
+		// Left panel with reveal effect
+		.panel.panel-left.panel-reveal
+			.content-block
+				p Left panel content goes here
+
+		.views
+			//Your main view, should have "view-main" class
+			.view.view-main
+
+				// Pages, because we need fixed-through navbar and toolbar, it has additional appropriate classes
+				.pages.navbar-fixed
+
+					// Index Page
+					.page(data-page="index")
+
+						// Top Navbar. In Material theme it should be inside of the page
+						.navbar
+							.navbar-inner
+								.left
+									a.link.icon-only.open-panel(href="#")
+										i.icon.icon-bars
+								
+								.center Botón Alerta
+
+								.right
+									a.link.icon-only(href="#", data-status='connected')
+										i.ion-android-cloud-done
+
+						// Page content
+						.page-content
+							.content-block
+								.row
+									.col-50
+										.text-center.color-red BOMBEROS
+										div(data-action='call', data-to='FIREFIGHTERS')
+											img.action-btn.bg-red(src='img/fire-btn.svg')
+
+									.col-50
+										.text-center.color-green MÉDICO
+										div(data-action='call', data-to='AMBULANCE')
+											img.action-btn.bg-green(src='img/medic-btn.svg')
+
+								.row.m-top
+									.col-50
+										.text-center.color-indigo POLICÍA
+										div(data-action='call', data-to='POLICE')
+											img.action-btn.bg-indigo(src='img/police-btn.svg')
+
+									.col-50
+										.text-center.color-purple VIOLENCIA GÉNERO
+										div(data-action='call', data-to='VIOLENCE')
+											img.action-btn.bg-purple(src='img/genre-btn.svg')
+
+							.content-block
+								#log.text-center.color-gray Conectando con el dispositivo...
+
+		//Templates
+		script#status-sent-template(type='text/x-handlebars-template')
+			.status-icon.bg-lime
+				i.ion-android-done
+
+		script#status-read-template(type='text/x-handlebars-template')
+			.status-icon.bg-green
+				i.ion-android-done-all
+
+		//script(src="http://jsconsole.com/remote.js?boton-alerta")
+		script(type="text/javascript", src="cordova.js")
+		script(type="text/javascript", src="js/libs/framework7.min.js")
+		script(type="text/javascript", src="js/libs/require.min.js", data-main="js/index")
