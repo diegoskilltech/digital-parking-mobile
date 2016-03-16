@@ -57,7 +57,7 @@
   <access origin="*"/>
 
   <plugin name="cordova-plugin-whitelist" version="1"/>
-  <plugin name="plugin.google.maps.menusito" spec="1.2.5" source="pgb" />
+  <plugin name="plugin.google.maps.menusito" spec="1.2.5" source="pgb">
     <param name="API_KEY_FOR_ANDROID" value="xyz" />
     <param name="API_KEY_FOR_IOS" value="123" />
   </plugin>
