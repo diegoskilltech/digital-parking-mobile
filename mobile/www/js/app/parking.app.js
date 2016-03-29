@@ -26,40 +26,6 @@ define(['jquery', 'underscore', 'handlebars'], function($, _, handlebars){
 				dynamicNavbar: true
 			});
 
-			var scanTimeOut = null;
-			this.app.onPageBeforeInit('parking', function(page){
-				console.log('PARKING PAGE LOADED -->' + $$(page.container).find('[data-action=scan-location-code]'));
-				$$(page.container).find('[data-action=scan-location-code]').on('click', function(){
-					console.log('SCAN CODE CLICKED!!!!!!');
-					try{
-
-						if(!scanTimeOut){
-
-							scanTimeOut = true;
-							cordova.plugins.barcodeScanner.scan(
-								function (result) {
-									alert("We got a barcode\n" +
-									"Result: " + result.text + "\n" +
-									"Format: " + result.format + "\n" +
-									"Cancelled: " + result.cancelled);
-									scanTimeOut = null;
-								}, 
-								function (error) {
-									alert("Scanning failed: " + error);
-									scanTimeOut = null;
-								}
-							);
-						}
-					}catch(err){
-						console.error(err);
-					}
-				});
-			});
-
-			this.app.onPageBeforeRemove('parking', function(page){
-				console.log('PARKING PAGE REMOVED -->');
-			});
-
 			this.bindEvents();
 
 		},
@@ -70,6 +36,8 @@ define(['jquery', 'underscore', 'handlebars'], function($, _, handlebars){
 			//document.addEventListener('volumedownbutton', _.bind(this.receivedEvent, this, null, 'call-emergency'), false);
 			//ParkingApp.Event.on('log-message', _.bind(this.receivedEvent, this));
 
+			this.app.onPageBeforeInit('parking', _.bind(this.page.parking, this));
+
 			var mapOptions = {
 				zoom: 15,
 				center: {lat: -34.397, lng: 150.644},
@@ -79,6 +47,48 @@ define(['jquery', 'underscore', 'handlebars'], function($, _, handlebars){
 
 			var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
 		}
+	};
+
+	//Page controllers
+	ParkingApp.page.parking = function(page){
+		console.log('PARKING PAGE LOADED -->');
+
+		var scanTimeOut = null;
+		(el = $$(page.container)).find('[data-action=scan-location-code]').on('click', function(){
+			console.log('SCAN CODE CLICKED!!!!!!');
+			try{
+
+				if(!scanTimeOut){
+
+					scanTimeOut = true;
+					cordova.plugins.barcodeScanner.scan(
+						function (result) {
+							console.log("We got a barcode\n" +
+							"Result: " + result.text + "\n" +
+							"Format: " + result.format + "\n" +
+							"Cancelled: " + result.cancelled);
+
+							scanTimeOut = null;
+							if(result.text){
+								try{
+									var qr = JSON.parse(result.text);
+									el.find("[name=location]").val(qr.location);
+								}catch(err){
+									console.warn(err);
+								}
+								
+							}
+						}, 
+						function (error) {
+							alert("Scanning failed: " + error);
+							scanTimeOut = null;
+						}
+					);
+				}
+			}catch(err){
+				console.error(err);
+			}
+		});
 	};
 
 	//Define the Event Dispatcher

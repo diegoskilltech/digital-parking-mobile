@@ -11,7 +11,7 @@
     <!-- Page content-->
     <div class="page-content">
       <div style="color: rgba(0,0,0,.32); line-height: 64px;" class="row parking-display text-center">
-        <div class="col-20"><i style="font-size: 64px; line-height: 1;" class="ion-android-car"></i></div>
+        <div class="col-20"><i data-action="scan-location-code" style="font-size: 64px; line-height: 1;" class="ion-qr-scanner"></i></div>
         <div class="col-40"><span style="font-size: 64px;">0</span><span>min</span></div>
         <div class="col-40"><span>$</span><span style="font-size: 64px;">0.0</span></div>
       </div>
@@ -22,7 +22,7 @@
               <div class="item-inner">
                 <div class="item-title label">Ubicación</div>
                 <div class="item-input"> 
-                  <input type="email" placeholder="La ubicación del vehículo"/>
+                  <input type="text" name="location" placeholder="La ubicación del vehículo"/>
                 </div>
               </div>
             </div>
@@ -50,7 +50,7 @@
           <div class="col-33"><a class="button button-big button-fill color-cyan"><i style="font-size: 24px" class="ion-plus"></i></a></div>
         </div>
       </div>
-      <div class="content-block"><a data-action="scan-location-code" class="button button-big button-fill button-raised color-green"><i class="ion-clock"> </i>Iniciar estacionamiento</a></div>
+      <div class="content-block"><a class="button button-big button-fill button-raised color-green"><i class="ion-clock"> </i>Iniciar estacionamiento</a></div>
     </div>
   </div>
 </div>

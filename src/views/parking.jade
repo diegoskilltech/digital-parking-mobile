@@ -14,7 +14,7 @@
 		.page-content
 			.row.parking-display.text-center(style="color: rgba(0,0,0,.32); line-height: 64px;")
 				.col-20
-					i.ion-android-car(style="font-size: 64px; line-height: 1;")
+					i.ion-qr-scanner(data-action="scan-location-code", style="font-size: 64px; line-height: 1;")
 				.col-40
 					span(style="font-size: 64px;") 0
 					span min
@@ -26,10 +26,9 @@
 					li
 						.item-content
 							.item-inner
-
 								.item-title.label Ubicación
 								.item-input 
-									input(type="email", placeholder="La ubicación del vehículo")
+									input(type="text", name="location", placeholder="La ubicación del vehículo")
 					li
 						.item-content
 							.item-inner
@@ -51,6 +50,7 @@
 							i.ion-plus(style="font-size: 24px")
 
 			.content-block
-				a.button.button-big.button-fill.button-raised.color-green(data-action="scan-location-code")
+				a.button.button-big.button-fill.button-raised.color-green
 					i.ion-clock  
 					| Iniciar estacionamiento
+
