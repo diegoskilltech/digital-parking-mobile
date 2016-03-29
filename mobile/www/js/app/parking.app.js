@@ -26,29 +26,39 @@ define(['jquery', 'underscore', 'handlebars'], function($, _, handlebars){
 				dynamicNavbar: true
 			});
 
-			this.app.onPageInit('parking', function(page){
+			var scanTimeOut = null;
+			this.app.onPageBeforeInit('parking', function(page){
 				console.log('PARKING PAGE LOADED -->' + $$(page.container).find('[data-action=scan-location-code]'));
 				$$(page.container).find('[data-action=scan-location-code]').on('click', function(){
 					console.log('SCAN CODE CLICKED!!!!!!');
 					try{
 
-						cordova.plugins.barcodeScanner.scan(
-							function (result) {
-								alert("We got a barcode\n" +
-								"Result: " + result.text + "\n" +
-								"Format: " + result.format + "\n" +
-								"Cancelled: " + result.cancelled);
-							}, 
-							function (error) {
-								alert("Scanning failed: " + error);
-							}
-						);
+						if(!scanTimeOut){
+
+							scanTimeOut = true;
+							cordova.plugins.barcodeScanner.scan(
+								function (result) {
+									alert("We got a barcode\n" +
+									"Result: " + result.text + "\n" +
+									"Format: " + result.format + "\n" +
+									"Cancelled: " + result.cancelled);
+									scanTimeOut = null;
+								}, 
+								function (error) {
+									alert("Scanning failed: " + error);
+									scanTimeOut = null;
+								}
+							);
+						}
 					}catch(err){
 						console.error(err);
 					}
 				});
 			});
 
+			this.app.onPageBeforeRemove('parking', function(page){
+				console.log('PARKING PAGE REMOVED -->');
+			});
 
 			this.bindEvents();
 
