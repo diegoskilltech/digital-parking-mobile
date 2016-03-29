@@ -9,8 +9,8 @@
     <link rel="stylesheet" type="text/css" href="css/framework7.material.min.css">
     <link rel="stylesheet" type="text/css" href="css/framework7.material.colors.min.css">
     <link rel="stylesheet" type="text/css" href="css/ionicons.min.css">
-    <link rel="stylesheet" type="text/css" href="css/boton-alerta.css">
-    <title>Botón de Alerta</title>
+    <link rel="stylesheet" type="text/css" href="css/digital-parking.css">
+    <title>Digital Parking</title>
   </head>
   <body class="theme-blue">
     <!--Status bar overlay for full screen mode-->
@@ -25,42 +25,45 @@
     </div>
     <div class="views">
       <!--Your main view, should have "view-main" class-->
-      <div class="view view-main">
+      <div class="view view-main navbar-through">
         <!-- Pages, because we need fixed-through navbar and toolbar, it has additional appropriate classes-->
         <div class="pages navbar-fixed">
           <!-- Index Page-->
-          <div data-page="index" class="page">
+          <div data-page="index" class="page navbar-fixed">
             <!-- Top Navbar. In Material theme it should be inside of the page-->
             <div class="navbar">
               <div class="navbar-inner">
                 <div class="left"><a href="#" class="link icon-only open-panel"><i class="icon icon-bars"></i></a></div>
-                <div class="center">Botón Alerta</div>
+                <div class="center">Digital parking</div>
                 <div class="right"><a href="#" data-status="connected" class="link icon-only"><i class="ion-android-cloud-done"></i></a></div>
               </div>
             </div>
             <!-- Page content-->
             <div class="page-content">
+              <div class="list-block">
+                <ul>
+                  <li><a href="login.html" data-view=".view-main" class="item-link close-panel">
+                      <div class="item-content">
+                        <div class="item-inner">
+                          <div class="item-title">Iniciar sesión</div>
+                        </div>
+                      </div></a></li>
+                  <li><a href="signup.html" data-view=".view-main" class="item-link close-panel">
+                      <div class="item-content">
+                        <div class="item-inner">
+                          <div class="item-title">Registrarse</div>
+                        </div>
+                      </div></a></li>
+                  <li><a href="parking.html" data-view=".view-main" class="item-link close-panel">
+                      <div class="item-content">
+                        <div class="item-inner">
+                          <div class="item-title">Estacionar</div>
+                        </div>
+                      </div></a></li>
+                </ul>
+              </div>
               <div class="content-block">
-                <div class="row">
-                  <div class="col-50">
-                    <div class="text-center color-red">BOMBEROS</div>
-                    <div data-action="call" data-to="FIREFIGHTERS"><img src="img/fire-btn.svg" class="action-btn bg-red"></div>
-                  </div>
-                  <div class="col-50">
-                    <div class="text-center color-green">MÉDICO</div>
-                    <div data-action="call" data-to="AMBULANCE"><img src="img/medic-btn.svg" class="action-btn bg-green"></div>
-                  </div>
-                </div>
-                <div class="row m-top">
-                  <div class="col-50">
-                    <div class="text-center color-indigo">POLICÍA</div>
-                    <div data-action="call" data-to="POLICE"><img src="img/police-btn.svg" class="action-btn bg-indigo"></div>
-                  </div>
-                  <div class="col-50">
-                    <div class="text-center color-purple">VIOLENCIA GÉNERO</div>
-                    <div data-action="call" data-to="VIOLENCE"><img src="img/genre-btn.svg" class="action-btn bg-purple"></div>
-                  </div>
-                </div>
+                <div id="map-canvas"></div>
               </div>
               <div class="content-block">
                 <div id="log" class="text-center color-gray">Conectando con el dispositivo...</div>
@@ -69,6 +72,8 @@
           </div>
         </div>
       </div>
+      <!-- Right view, it is main view-->
+      <div class="view view-login navbar-through"></div>
     </div>
     <!--Templates-->
     <script id="status-sent-template" type="text/x-handlebars-template">
@@ -77,8 +82,8 @@
     <script id="status-read-template" type="text/x-handlebars-template">
       <div class="status-icon bg-green"><i class="ion-android-done-all"></i></div>
     </script>
-    <!--script(src="http://jsconsole.com/remote.js?boton-alerta")-->
     <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyAD7MAY-GprP7O6b4pgyciVWwUJc5F7xAo"></script>
     <script type="text/javascript" src="js/libs/framework7.min.js"></script>
     <script type="text/javascript" src="js/libs/require.min.js" data-main="js/index"></script>
   </body>

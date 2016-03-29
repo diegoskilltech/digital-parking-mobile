@@ -1,0 +1,56 @@
+//parking jade
+.pages.navbar-fixed
+	.page.navbar-fixed(data-page="parking")
+
+		.navbar
+			.navbar-inner
+				.left
+					a.link.back(href="#", data-view=".view-main")
+						i.icon.icon-back
+				
+				.center Iniciar estacionamiento
+
+		// Page content
+		.page-content
+			.row.parking-display.text-center(style="color: rgba(0,0,0,.32); line-height: 64px;")
+				.col-20
+					i.ion-android-car(style="font-size: 64px; line-height: 1;")
+				.col-40
+					span(style="font-size: 64px;") 0
+					span min
+				.col-40
+					span $
+					span(style="font-size: 64px;") 0.0
+			.list-block
+				ul
+					li
+						.item-content
+							.item-inner
+
+								.item-title.label Ubicación
+								.item-input 
+									input(type="email", placeholder="La ubicación del vehículo")
+					li
+						.item-content
+							.item-inner
+								.item-title.label Vehículo
+								.item-input
+									select
+										option AGY181
+			.content-block
+				.row
+					.col-33
+						a.button.button-big.button-fill.color-cyan
+							i.ion-minus(style="font-size: 24px")
+					.col-33
+						h1.parking-time-indicator.text-center(style="height: 48px; line-height: 48px; margin: 0; padding: 0; font-size: 44px;")
+							span.time 0
+							span(style="font-size: 16px; font-weight: normal;") min
+					.col-33
+						a.button.button-big.button-fill.color-cyan
+							i.ion-plus(style="font-size: 24px")
+
+			.content-block
+				a.button.button-big.button-fill.button-raised.color-green 
+					i.ion-clock  
+					| Iniciar estacionamiento

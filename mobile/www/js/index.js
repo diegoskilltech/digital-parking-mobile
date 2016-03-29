@@ -1,8 +1,4 @@
-// For any third party dependencies, like jQuery, place them in the lib folder.
-
-// Configure loading modules from the lib directory,
-// except for 'app' ones, which are in a sibling
-// directory.
+//Require base path configuration
 requirejs.config({
     baseUrl: 'js/libs',
     paths: {
@@ -22,8 +18,8 @@ requirejs.config({
 
 // Start loading the main app file. Put all of
 // your application logic in there.
-requirejs(['./app/boton.app'], function(ButtonApp){
+requirejs(['./app/parking.app'], function(ParkingApp){
 	console.log('INDEX App initialization...');
 
-	ButtonApp.initialize();
+	ParkingApp.initialize();
 });

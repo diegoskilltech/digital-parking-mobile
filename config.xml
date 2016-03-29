@@ -55,12 +55,9 @@
   <gap:splash src="www/res/screen/windows-phone/screen-portrait.jpg" gap:platform="winphone"/>
 
   <access origin="*"/>
-
+  
+  <plugin name="net.roughshod.plugins.barcodescanner" spec="3.0.0" source="pgb" />
   <plugin name="cordova-plugin-whitelist" version="1"/>
-  <plugin name="plugin.google.maps.menusito" spec="1.2.5" source="pgb">
-    <param name="API_KEY_FOR_ANDROID" value="xyz" />
-    <param name="API_KEY_FOR_IOS" value="123" />
-  </plugin>
 
   <allow-intent href="http://*/*"/>
   <allow-intent href="https://*/*"/>

@@ -1,0 +1,44 @@
+//login jade
+.pages.navbar-fixed
+	.page.navbar-fixed(data-page="login")
+
+		// Top Navbar. In Material theme it should be inside of the page
+		.navbar
+			.navbar-inner
+				.left
+					a.link.back(href="#", data-view=".view-main")
+						i.icon.icon-back
+				
+				.center Iniciar sesión
+
+		// Page content
+		.page-content
+			.content-block-title Ingresa tus datos
+			.list-block
+				ul 
+					li
+						.item-content
+							.item-media: i.icon.icon-form-email
+							.item-inner
+								.item-title.label E-mail
+								.item-input 
+									input(type="email", placeholder="Tu dirección de E-mail")
+
+					li
+						.item-content
+							.item-media: i.icon.icon-form-password
+							.item-inner
+								.item-title.label Contraseña
+								.item-input
+									input(type="password", placeholder="Tu contraseña")
+
+			//Buttons block
+			.content-block
+				input.button.button-big.button-fill.color-green(type="submit", value="Ingresar")
+
+			.content-block
+				.content-block-inner
+					p.text-center ¿No estás registrado?
+
+					a(href="signup.html", data-view=".view-main").button.button-big
+						| Registrarse

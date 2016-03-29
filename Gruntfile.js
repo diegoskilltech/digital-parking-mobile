@@ -9,7 +9,10 @@ module.exports = function(grunt) {
 					banner: '/*! <%= pkg.name %> 0.0.1 HTML */\n'
 				},
 				files: {
-					'mobile/www/index.html': 'src/views/*.jade'
+					'mobile/www/index.html': 'src/views/index.jade',
+					'mobile/www/signup.html': 'src/views/signup.jade',
+					'mobile/www/login.html': 'src/views/login.jade',
+					'mobile/www/parking.html': 'src/views/parking.jade'
 				}
 			}
 		},
