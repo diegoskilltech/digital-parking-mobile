@@ -12,9 +12,23 @@ requirejs.config({
 
     	handlebars: {
     		exports: 'Handlebars'
-    	}
+    	},
+
+        q: {
+            exports: 'q'
+        },
+
+        moment: {
+            exports: 'moment'
+        }
     }
 });
+
+//Instantiate the app as soon as posible
+var ParkingApp = {
+    app: new Framework7({material: true})
+}
+ParkingApp.app.showPreloader('Iniciando...');
 
 // Start loading the main app file. Put all of
 // your application logic in there.

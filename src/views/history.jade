@@ -1,0 +1,33 @@
+//login jade
+.pages.navbar-fixed
+	.page.navbar-fixed(data-page="history")
+
+		// Top Navbar. In Material theme it should be inside of the page
+		.navbar
+			.navbar-inner
+				.left
+					a.link.back(href="#", data-view=".view-main")
+						i.icon.icon-back
+				
+				.center Historial de estacionamiento
+
+		// Page content
+		.page-content
+			.list-block.media-list#list-container
+					
+			script#parking-template(type='text/x-handlebars-template')
+				ul
+					{{#each this}}
+					li
+						.item-content
+							.item-media
+								i.ion-location
+							.item-inner
+								.item-title-row
+									.item-title {{location}}
+									.item-after {{date}}
+								.item-text {{id}} - {{time}} minutos
+					{{/each}}
+					{{#unless this}}
+					li No hay información
+					{{/unless}}

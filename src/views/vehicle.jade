@@ -1,0 +1,36 @@
+//login jade
+.pages.navbar-fixed
+	.page.navbar-fixed(data-page="vehicle")
+
+		// Top Navbar. In Material theme it should be inside of the page
+		.navbar
+			.navbar-inner
+				.left
+					a.link.back(href="#", data-view=".view-main")
+						i.icon.icon-back
+				
+				.center Vehículos
+
+		// Page content
+		.page-content
+			.list-block#list-container
+				
+					
+
+			//Buttons block
+			.content-block
+				a(data-action="add-vehicle").button
+					| Registrar vehículo
+
+			script#vehicle-template(type='text/x-handlebars-template')
+				ul
+					{{#each this}}
+					li
+						.item-content(href="#", data-action="del-vehicle", _id="{{vehiculo}}")
+							.item-media
+								i.ion-model-s
+							.item-inner
+								.item-title {{vehiculo}}
+								.item-after
+									i.ion-close
+					{{/each}}

@@ -1,0 +1,32 @@
+
+<!--login jade-->
+<div class="pages navbar-fixed">
+  <div data-page="vehicle" class="page navbar-fixed">
+    <!-- Top Navbar. In Material theme it should be inside of the page-->
+    <div class="navbar">
+      <div class="navbar-inner">
+        <div class="left"><a href="#" data-view=".view-main" class="link back"><i class="icon icon-back"></i></a></div>
+        <div class="center">Vehículos</div>
+      </div>
+    </div>
+    <!-- Page content-->
+    <div class="page-content">
+      <div id="list-container" class="list-block"></div>
+      <!--Buttons block-->
+      <div class="content-block"><a data-action="add-vehicle" class="button">Registrar vehículo</a></div>
+      <script id="vehicle-template" type="text/x-handlebars-template">
+        <ul>{{#each this}}
+          <li>
+            <div href="#" data-action="del-vehicle" _id="{{vehiculo}}" class="item-content">
+              <div class="item-media"><i class="ion-model-s"></i></div>
+              <div class="item-inner">
+                <div class="item-title">{{vehiculo}}</div>
+                <div class="item-after"><i class="ion-close"></i></div>
+              </div>
+            </div>
+          </li>{{/each}}
+        </ul>
+      </script>
+    </div>
+  </div>
+</div>

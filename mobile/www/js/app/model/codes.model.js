@@ -4,8 +4,12 @@
 define(function(){
 	return {
 		'DEV': {
-			HOST: 'http://179.43.122.195',
-			CONTEXT: 'parking'
+			HOST: 'http://demo.parkingdigital.com',
+
+			TIME: 5,
+			PRICE: 5.1,
+
+			SNOOZE: 60 * 5
 		}
 	};
 });

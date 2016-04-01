@@ -12,7 +12,16 @@ module.exports = function(grunt) {
 					'mobile/www/index.html': 'src/views/index.jade',
 					'mobile/www/signup.html': 'src/views/signup.jade',
 					'mobile/www/login.html': 'src/views/login.jade',
-					'mobile/www/parking.html': 'src/views/parking.jade'
+					'mobile/www/map.html': 'src/views/map.jade',
+
+					'mobile/www/parking.html': 'src/views/parking.jade',
+					'mobile/www/parked.html': 'src/views/parked.jade',
+
+					'mobile/www/vehicle.html': 'src/views/vehicle.jade',
+					'mobile/www/history.html': 'src/views/history.jade',
+					'mobile/www/penalty.html': 'src/views/penalty.jade',
+
+					'mobile/www/home.html': 'src/views/home.jade'
 				}
 			}
 		},

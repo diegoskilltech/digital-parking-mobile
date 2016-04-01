@@ -13,7 +13,10 @@
 
 		// Page content
 		.page-content
-			.content-block-title Ingresa tus datos
+			.content-block-title 
+				div Ingresa tus datos
+				.error-message.color-red
+
 			.list-block
 				ul 
 					li
@@ -22,19 +25,18 @@
 							.item-inner
 								.item-title.label E-mail
 								.item-input 
-									input(type="email", placeholder="Tu dirección de E-mail")
-
+									input(type="email", name="user", placeholder="Tu dirección de E-mail")
 					li
 						.item-content
 							.item-media: i.icon.icon-form-password
 							.item-inner
 								.item-title.label Contraseña
 								.item-input
-									input(type="password", placeholder="Tu contraseña")
+									input(type="password", name="password", placeholder="Tu contraseña")
 
 			//Buttons block
 			.content-block
-				input.button.button-big.button-fill.color-green(type="submit", value="Ingresar")
+				input.button.button-big.button-fill.color-green(type="submit", value="Ingresar", data-action="login")
 
 			.content-block
 				.content-block-inner

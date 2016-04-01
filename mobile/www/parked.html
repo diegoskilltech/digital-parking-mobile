@@ -1,0 +1,42 @@
+
+<!--parking jade-->
+<div class="pages navbar-fixed">
+  <div data-page="parked" class="page navbar-fixed">
+    <div class="navbar">
+      <div class="navbar-inner">
+        <div class="left"><a href="#" data-view=".view-main" class="link back"><i class="icon icon-back"></i></a></div>
+        <div class="center">Vehículo estacionado</div>
+      </div>
+    </div>
+    <!-- Page content-->
+    <div class="page-content">
+      <div style="color: rgba(0,0,0,.32);" class="content-block parking-display text-center">
+        <div class="row">
+          <div class="col-100"><span>Ubicación:  </span><b class="location"></b></div>
+        </div>
+        <div class="row">
+          <div class="col-100"><span>Vehículo:  </span><b class="vehicle"></b></div>
+        </div>
+        <div class="row">
+          <div class="col-100">
+            <div style="padding-top: 10px;">Tiempo restante: </div>
+            <div><b style="font-size: 48px" class="remaning-time"></b></div>
+          </div>
+        </div>
+      </div>
+      <div class="list-block">
+        <div class="error-message color-red"></div>
+      </div>
+      <div class="content-block">
+        <div class="row">
+          <div class="col-33"><a data-action="less-time" class="button button-big button-fill color-cyan"><i style="font-size: 24px" class="ion-minus"></i></a></div>
+          <div class="col-33">
+            <h1 style="height: 48px; line-height: 48px; margin: 0; padding: 0; font-size: 44px;" class="parking-time-indicator text-center"><span class="time">0</span><span style="font-size: 16px; font-weight: normal;">min</span></h1>
+          </div>
+          <div class="col-33"><a data-action="more-time" class="button button-big button-fill color-cyan"><i style="font-size: 24px" class="ion-plus"></i></a></div>
+        </div>
+      </div>
+      <div class="content-block"><a data-action="start-parking" class="button button-big button-fill button-raised color-green">Adicionar tiempo</a></div>
+    </div>
+  </div>
+</div>

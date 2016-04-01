@@ -1,0 +1,15 @@
+//parking jade
+.pages.navbar-fixed
+	.page.navbar-fixed(data-page="map")
+
+		.navbar
+			.navbar-inner
+				.left
+					a.link.back(href="#", data-view=".view-main")
+						i.icon.icon-back
+				
+				.center Ubicaciones disponibles
+
+		// Page content
+		.page-content
+			#map-canvas

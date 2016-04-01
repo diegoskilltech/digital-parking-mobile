@@ -1,0 +1,35 @@
+
+<!--login jade-->
+<div class="pages navbar-fixed">
+  <div data-page="history" class="page navbar-fixed">
+    <!-- Top Navbar. In Material theme it should be inside of the page-->
+    <div class="navbar">
+      <div class="navbar-inner">
+        <div class="left"><a href="#" data-view=".view-main" class="link back"><i class="icon icon-back"></i></a></div>
+        <div class="center">Historial de estacionamiento</div>
+      </div>
+    </div>
+    <!-- Page content-->
+    <div class="page-content">
+      <div id="list-container" class="list-block media-list"></div>
+      <script id="parking-template" type="text/x-handlebars-template">
+        <ul>{{#each this}}
+          <li>
+            <div class="item-content">
+              <div class="item-media"><i class="ion-location"></i></div>
+              <div class="item-inner">
+                <div class="item-title-row">
+                  <div class="item-title">{{location}}</div>
+                  <div class="item-after">{{date}}</div>
+                </div>
+                <div class="item-text">{{id}} - {{time}} minutos</div>
+              </div>
+            </div>
+          </li>{{/each}}
+          {{#unless this}}
+          <li>No hay información</li>{{/unless}}
+        </ul>
+      </script>
+    </div>
+  </div>
+</div>

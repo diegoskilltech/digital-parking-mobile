@@ -1,0 +1,46 @@
+//parking jade
+.pages.navbar-fixed
+	.page.navbar-fixed(data-page="parked")
+
+		.navbar
+			.navbar-inner
+				.left
+					a.link.back(href="#", data-view=".view-main")
+						i.icon.icon-back
+				
+				.center Vehículo estacionado
+
+		// Page content
+		.page-content
+			.content-block.parking-display.text-center(style="color: rgba(0,0,0,.32);")
+				.row
+					.col-100
+						span Ubicación:  
+						b.location
+				.row
+					.col-100
+						span Vehículo:  
+						b.vehicle
+				.row
+					.col-100
+						div(style="padding-top: 10px;") Tiempo restante: 
+						div: b.remaning-time(style='font-size: 48px')
+
+			.list-block
+				.error-message.color-red
+			.content-block
+				.row
+					.col-33
+						a.button.button-big.button-fill.color-cyan(data-action="less-time")
+							i.ion-minus(style="font-size: 24px")
+					.col-33
+						h1.parking-time-indicator.text-center(style="height: 48px; line-height: 48px; margin: 0; padding: 0; font-size: 44px;")
+							span.time 0
+							span(style="font-size: 16px; font-weight: normal;") min
+					.col-33
+						a.button.button-big.button-fill.color-cyan(data-action="more-time")
+							i.ion-plus(style="font-size: 24px")
+
+			.content-block
+				a.button.button-big.button-fill.button-raised.color-green(data-action="start-parking")
+					| Adicionar tiempo
