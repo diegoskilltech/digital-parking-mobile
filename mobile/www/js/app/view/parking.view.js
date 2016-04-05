@@ -55,10 +55,10 @@ define(['jquery', 'underscore', 'handlebars', '../model/parking.model', '../mode
 						if(result.text){
 							try{
 								var qr = JSON.parse(result.text);
-								(self.locations || []).push(qr);
+								//(self.locations || []).push(qr);
 								el.find("[name=location]").append(self.locationTemplate([qr]));
 							}catch(err){
-								console.warn(err);
+								console.error(err);
 							}
 							
 						}
