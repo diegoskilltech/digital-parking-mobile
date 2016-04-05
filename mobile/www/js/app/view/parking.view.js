@@ -95,7 +95,7 @@ define(['jquery', 'underscore', 'handlebars', '../model/parking.model', '../mode
 		var location = _.findWhere(this.locations, {id: parseInt(locationId)});
 		var transactionId = 'TX1000';
 
-		var parking = {time: this.time, amount: this.total * 100, vehicle: vehicle, locationId: locationId, location: location, transactionId: transactionId};
+		var parking = {time: this.time, amount: Math.floor(this.total * 100), vehicle: vehicle, locationId: locationId, location: location, transactionId: transactionId};
 		console.log(parking);
 		if(!parking.time){
 			this.el.find('.error-message').text('Debes indicar el tiempo');
