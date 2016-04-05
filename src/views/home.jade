@@ -14,15 +14,15 @@
 		.page-content
 			.content-block-title
 				.row
-					.col-50 Hola  
+					.col-100 Hola  
 						b.user-name
-					.col-50.text-right
-						a(href="parked.html", data-view=".view-main")
-							b.parking-indicator
 
 			.content-block
+				p.hidden.parking-container
+					a(href="parked.html", data-view=".view-main").button.button-big.button-raised.color-blue
+							b.parking-indicator
 				p
-					a(href="parking.html", data-view=".view-main").button.button-big.button-fill.button-raised.color-green
+					a(data-action="start-parking").button.button-big.button-fill.button-raised.color-green
 						| Iniciar estacionamiento
 				p
 					a(href="map.html", data-view=".view-main").button.button-big.button-fill.button-raised.color-orange

@@ -55,6 +55,11 @@ define(['jquery', 'underscore', 'handlebars', './view/parking.view', './view/par
 				self.mainView.router.load({url: 'parked.html'});
 			});
 
+			this.Event.on(this.Event.PARKING_STARTNEW_EVENT, function(){
+				self.Parking = null;
+				self.mainView.router.load({url: 'parking.html'});
+			});
+
 			this.Event.on(this.Event.PARKING_STARTED_EVENT, _.bind(ParkingApp.Snoozer.onStart, ParkingApp.Snoozer));
 		},
 
@@ -88,6 +93,7 @@ define(['jquery', 'underscore', 'handlebars', './view/parking.view', './view/par
 
 	//Define the Event Dispatcher
 	ParkingApp.Event = {
+		PARKING_STARTNEW_EVENT: 'parking-start-new',
 		PARKING_ADDMORE_EVENT: 'parking-add-more-time',
 
 		PARKING_STARTED_EVENT: 'parking-started',
