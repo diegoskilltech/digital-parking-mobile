@@ -9,6 +9,13 @@ body
 	-webkit-text-size-adjust: none
 	-webkit-user-select: none
 
+.navbar-inner
+	//background-color: #ffd300 !important
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#ffd300), to(#ffbc00))
+	background-image: -webkit-linear-gradient(top, #ffd300 0%, #ffbc00 100%)
+	background-image: linear-gradient(to bottom, #ffd300 0%, #ffbc00 100%)
+	color: #5f4600 !important
+
 //HELPER CLASSES
 .right
 	float: right
@@ -73,3 +80,9 @@ body
 
 
 #map-canvas { height: 100%; }
+[data-page=index]
+[data-page=home]
+	color: #fff !important
+	background-image: url('../img/misc.jpg')
+	.content-block-title
+		color: #fff !important

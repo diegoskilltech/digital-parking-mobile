@@ -4,7 +4,7 @@
 define(function(){
 	return {
 		'DEV': {
-			HOST: 'http://demo.parkingdigital.com',
+			HOST: 'http://caba.parkingdigital.com',
 
 			TIME: 5,
 			PRICE: 5.1,

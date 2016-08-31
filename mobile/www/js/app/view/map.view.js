@@ -32,7 +32,7 @@ define(['jquery', 'underscore', 'handlebars', '../model/parking.model'], functio
 
 		parkingModel
 			.getCurrentPosition()
-			.done(_.bind(this.onLocationChange, this));
+			.done(_.bind(this.onLocationChange, this), _.bind(console.warn, console));
 
 		parkingModel
 			.getFreeLocations()
